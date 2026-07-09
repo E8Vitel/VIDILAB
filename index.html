@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <title>ViDiLab</title>
+    </head>
+    <body style="background-color: #111111; color: white;" class="p-4">
+        <div id="app">
+        <nav class="rounded-xl p-4 text-white">
+            <div class="relative flex justify-between items-center">
+                <a href="#inicio" data-section="inicio" class="nav-link ms-4 me-4">INICIO</a>
+                <div class="flex-grow border-t border-gray-400"></div>
+                <a href="#sobre-nosotros" data-section="sobre-nosotros" class="nav-link ms-4 me-4">SOBRE NOSOTROS</a>
+                <div class="flex-grow border-t border-gray-400"></div>
+                <a href="#proyectos" data-section="proyectos" class="nav-link ms-4 me-4">PROYECTOS</a>
+                <div class="flex-grow border-t border-gray-400"></div>
+                <a href="#contacto" data-section="contacto" class="nav-link ms-4 me-4">CONTACTO</a>
+
+                <div id="indicator-wrapper" class="absolute top-full left-0 transition-transform duration-500 ease-in-out">
+                    <img id="nav-indicator" src="../img/gato.jpg" alt="Indicador"
+                    width="40" height="40"
+                    class="w-10 h-auto object-cover rounded-lg transition-transform duration-300 ease-in-out">
+                </div>
+            </div>
+        </nav>
+
+        <section id="inicio" class="pt-4">
+            <div class="relative items-center h-245">
+                <div class="flex items-center justify-center h-full w-full">
+                    <!-- Imagen above-the-fold: carga eager y con prioridad alta -->
+                    <img src="../img/gato.jpg" id="planeta-1" alt="Planeta 1"
+                    width="600" height="600"
+                    loading="eager" fetchpriority="high"
+                    class="mb-4">
+                </div>
+                <h1 class="absolute bottom-10 left-10 text-9xl font-bold">VIDI.LAB</h1>
+            </div>
+        </section>
+        <hr>
+
+        <section id="sobre-nosotros" class="pt-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" id="planeta-2" alt="Planeta 2"
+                    width="600" height="400" loading="lazy"
+                    class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h2 class="text-3xl font-bold mb-20">SOBRE NOSOTROS</h2>
+                    <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <section id="proyectos" class="m-4 pt-4">
+            <div class="flex items-center justify-center mb-4">
+                <h2 class="text-3xl font-bold">PROYECTOS</h2>
+            </div>
+
+            <div class="grid grid-cols-3 md:grid-cols-3 gap-6 mb-4 items-center">
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" alt="Proyecto destacado 1" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <img src="../img/gato.jpg" id="planeta-3" alt="Planeta 3" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" alt="Proyecto destacado 2" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" alt="Proyecto destacado 3" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" alt="Proyecto destacado 4" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" alt="Proyecto destacado 5" width="400" height="300" loading="lazy" class="w-100 h-auto object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- ===== CARRUSEL "TRABAJOS CHIQUITOS" ===== -->
+            <div class="relative">
+            <!-- Botón anterior -->
+                <button id="carrusel-prev" aria-label="Anterior"
+                    class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+                    &#8592;
+                </button>
+
+                <!-- Contenedor con scroll-snap: esto ES el carrusel, sin JS obligatorio -->
+                <div id="carrusel-track"
+                    class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-10 py-2 no-scrollbar">
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 1</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 2</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 3</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 4</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 5</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 6</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 7</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 8</a>
+                    </div>
+                    <div class="snap-start shrink-0 rounded-lg bg-gray-800 p-4 text-white min-w-[160px] text-center">
+                        <a href="#">TRABAJO CHIQUITO 9</a>
+                    </div>
+                </div>
+
+                <!-- Botón siguiente -->
+                <button id="carrusel-next" aria-label="Siguiente"
+                    class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-full flex items-center justify-center">
+                    &#8594;
+                </button>
+            </div>
+            <!-- ===== FIN CARRUSEL ===== -->
+
+        </section>
+
+        <section id="contacto" class="pt-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="flex flex-col gap-3 p-5">
+                    <h2 class="text-3xl font-bold mb-20">CONTACTO</h2>
+                    <form>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" name="nombre" class="w-full p-2 rounded-lg mb-4 text-black bg-white">
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" name="email" class="w-full p-2 rounded-lg mb-4 text-black bg-white">
+                        <label for="mensaje">Mensaje: </label>
+                        <textarea id="mensaje" name="mensaje" class="w-full p-2 rounded-lg mb-4 text-black bg-white"></textarea>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar</button>
+                    </form>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="../img/gato.jpg" id="planeta-4" alt="Planeta 4" width="600" height="400" loading="lazy" class="w-full h-auto object-cover rounded-lg">
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <footer>
+        <div class="flex justify-center mt-10 mb-4">
+            <p class="text-sm text-gray-400">&copy; 2026 ViDiLab. Todos los derechos reservados.</p>
+        </div>
+        </footer>
+
+        <script src="../js/nav-indicator.js"></script>
+        <script type="module" src="/src/main.js"></script>
+
+        <!-- Lógica mínima de los botones del carrusel -->
+        <script>
+            const track = document.getElementById('carrusel-track');
+            const prevBtn = document.getElementById('carrusel-prev');
+            const nextBtn = document.getElementById('carrusel-next');
+            const scrollAmount = 180; // ancho aproximado de una tarjeta + gap
+
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        </script>
+
+        <style>
+        /* Oculta la barra de scroll visual mientras se mantiene el scroll funcional */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        </style>
+    </body>
+</html>
